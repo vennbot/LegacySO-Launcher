@@ -1,0 +1,90 @@
+# The purpose of this workflow is to validate pull requests.
+# It is a stripped down version of the full workflow.
+
+name: electron-ci-pr
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+        include:
+          - os: windows-latest
+            build_command: "buildwin"
+            artifact_name: "fsolauncher-win32-unofficial"
+          - os: macos-latest
+            build_command: "builddarwin"
+            artifact_name: "fsolauncher-darwin64-unofficial"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Cache Node.js modules
+      id: cache-node-modules
+      uses: actions/cache@v2
+      with:
+        path: app/node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('app/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Playwright Skip Browser Download
+      run: echo "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1" >> $GITHUB_ENV
+
+    - name: python3 fix
+      if: matrix.os == 'macos-latest'
+      run: python3 -m pip install setuptools --break-system-packages
+
+    - name: Install dependencies
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm ci
+      working-directory: app
+
+    - name: Run ESLint
+      run: npm run lint
+      working-directory: app
+
+    - name: Build
+      run: npm run ${{ matrix.build_command }}
+      working-directory: app
+
+    - name: Run e2e tests
+      run: npm run test
+      env:
+        GITHUB_RATELIMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: app
+
+    - name: List contents of the release directory (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        dir "release"
+
+    - name: List contents of the release directory (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        ls -la release
+
+    - name: Upload artifacts (Windows)
+      uses: actions/upload-artifact@v4
+      if: matrix.os == 'windows-latest'
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: release/FreeSO Launcher Setup.exe
+
+    - name: Upload artifacts (macOS)
+      uses: actions/upload-artifact@v4
+      if: matrix.os == 'macos-latest'
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: release/FreeSO Launcher.dmg

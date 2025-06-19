@@ -1,0 +1,43 @@
+doctype html
+html(lang=LANG_CODE class=PLATFORM + ' ' + LANG_CODE)
+  include includes/head.pug
+  body(
+    class=LAUNCHER_THEME, 
+    data-blog-url=BLOG_URL, 
+    data-tw-url=TW_URL, 
+    data-ws-url=WS_URL,
+    data-trending-lots-url=TRENDING_LOTS_URL,
+    data-scenarios-url=SCENARIOS_URL,
+    data-dark-themes=DARK_THEMES, 
+    data-months=MONTHS
+  )
+    #titlebar
+      h1.title LegacySO Launcher #{LAUNCHER_VERSION}
+      .controls
+        span#control-minimize
+          i.material-icons minimize
+        span#control-close
+          i.material-icons close
+
+    #launcher
+      #toasts
+        #no-internet-notice
+          i.material-icons(style={'margin-top': '-5px'}) wifi_off
+          | #{INTERNET_TOASTT}
+      
+      include includes/sidebar.pug
+
+      #content
+        #overlay
+        include includes/pages/home.pug
+        include includes/pages/installer.pug
+        include includes/pages/settings.pug
+        include includes/pages/downloads.pug
+        include includes/pages/notifications.pug
+        include includes/pages/about.pug
+        include includes/pages/simitone.pug
+
+      include includes/one-click-install.pug  
+
+    include includes/templates.pug
+    include includes/scripts.pug

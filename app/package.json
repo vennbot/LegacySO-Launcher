@@ -1,0 +1,117 @@
+{
+  "name": "lsolauncher",
+  "productName": "LegacySO Launcher",
+  "version": "1.0.0",
+  "description": "Install, configure, and launch LegacySO with ease",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "test": "playwright test -x",
+    "debug": "npx electron --inspect=5858 .",
+    "devtools": "npx electron . --inspect=5858 --fl-devtools --disable-gpu-sandbox --enable-logging --v=1",
+    "filelog": "npx electron . --fl-filelog",
+    "lint": "eslint . --ext .js",
+    "startiss": "cmd /K \"../release/LegacySO Launcher Setup.exe\"",
+    "compileiss": "node scripts/update-iss-version.js && innosetup-compiler --verbose ../release/win32-ia32.iss",
+    "compileiss-new": "node scripts/update-iss-version-new.js && innosetup-compiler --verbose ../release-new/win32-ia32.iss",
+    "copywin": "cpy \"./**/*\" ../../release/lsolauncher-win32-ia32 --cwd=../extras/fsolauncher-build-extras --parents",
+    "copywin-new": "cpy \"./**/*\" ../../release-new/lsolauncher-win32-ia32 --cwd=../extras/fsolauncher-build-extras --parents",
+    "buildwin": "node scripts/build-win.js",
+    "builddarwin": "npm run rebuild && node scripts/build-darwin.js",
+    "builddeb": "node scripts/build-debian.js",
+    "postinstall": "echo \"Skipping postinstall on Windows - run manually if needed\"",
+    "rebuild": "echo \"Skipping rebuild on Windows - run manually if needed\""
+  },
+  "keywords": [
+    "LegacySO",
+    "launcher"
+  ],
+  "author": "Rhys Simpson",
+  "devDependencies": {
+    "@electron/packager": "^18.3.1",
+    "@playwright/test": "^1.36.1",
+    "cpy-cli": "^3.1.1",
+    "electron": "25.8.0",
+    "electron-builder": "^24.9.1",
+    "electron-playwright-helpers": "^1.6.0",
+    "electron-rebuild": "^3.2.9",
+    "eslint": "^7.32.0",
+    "playwright": "^1.36.1"
+  },
+  "optionalDependencies": {
+    "electron-installer-debian": "^3.2.0",
+    "electron-installer-dmg": "4.0.0",
+    "innosetup-compiler": "^6.2.0",
+    "macos-alias": "^0.2.11"
+  },
+  "dependencies": {
+    "@sentry/electron": "^4.0.0",
+    "axios": "^1.6.0",
+    "deflate-js": "^0.2.3",
+    "dompurify": "^3.0.9",
+    "express": "^4.18.2",
+    "fix-path": "^3.0.0",
+    "follow-redirects": "^1.15.4",
+    "fs-extra": "^10.1.0",
+    "howler": "^2.2.4",
+    "ini": "^2.0.0",
+    "mime": "^3.0.0",
+    "os-locale": "^5.0.0",
+    "pug": "^3.0.2",
+    "socket.io-client": "^4.7.4",
+    "sudo-prompt": "^9.2.1",
+    "v8-compile-cache": "^2.3.0",
+    "xml2js": "^0.6.2",
+    "yauzl": "^2.10.0"
+  },
+  "build": {
+    "appId": "com.legacyso.launcher",
+    "productName": "LegacySO Launcher",
+    "directories": {
+      "output": "../release"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "../extras/fsolauncher-proxy",
+        "to": "extras/fsolauncher-proxy",
+        "filter": [ "**/*", "!**/._*", "!**/.DS_Store" ]
+      }
+    ],
+    "mac": {
+      "icon": "beta.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [ "universal" ]
+        }
+      ]
+    },
+    "dmg": {
+      "title": "LegacySO Launcher",
+      "icon": "beta.icns",
+      "background": "osx_dmg.png",
+      "window": {
+        "width": 640,
+        "height": 480
+      },
+      "contents": [
+        {
+          "x": 192,
+          "y": 344,
+          "type": "file"
+        },
+        {
+          "x": 448,
+          "y": 344,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}

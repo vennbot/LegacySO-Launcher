@@ -1,0 +1,373 @@
+# The purpose of this workflow is to fully publish new releases.
+# It builds, tests, and publishes a new release along with its changelog.
+
+name: electron-ci
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-extras:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Build Remeshes
+        run: |
+          npm install
+          npm run build
+        working-directory: extras/fsolauncher-remeshes
+
+      - name: Build Proxy
+        run: |
+          npm install
+          npm run build
+        working-directory: extras/fsolauncher-proxy
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsolauncher-extras
+          path: |
+            release/remeshes-*.zip
+            release/proxy-*
+
+  build-launcher:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        include:
+          - os: windows-latest
+            build_command: "buildwin"
+            artifact_name: "fsolauncher-win32"
+          - os: macos-latest
+            build_command: "builddarwin"
+            artifact_name: "fsolauncher-darwin"
+          - os: ubuntu-latest
+            build_command: "builddeb"
+            artifact_name: "fsolauncher-debian"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Replace Sentry DSN and Browser Loader (Windows)
+      if: matrix.os == 'windows-latest'
+      working-directory: app
+      run: |
+        (Get-Content sentry.config.js) -replace "SENTRY_CI_DSN", "${{ secrets.SENTRY_CI_DSN }}" | Set-Content sentry.config.js
+        (Get-Content sentry.config.js) -replace "SENTRY_CI_BROWSER_LOADER", "${{ secrets.SENTRY_CI_BROWSER_LOADER }}" | Set-Content sentry.config.js
+        
+    - name: Replace Sentry DSN and Browser Loader (macOS)
+      if: matrix.os == 'macos-latest'
+      working-directory: app
+      run: |
+        sed "s#SENTRY_CI_DSN#${{ secrets.SENTRY_CI_DSN }}#g" sentry.config.js > sentry.config.temp.js
+        mv sentry.config.temp.js sentry.config.js
+        sed "s#SENTRY_CI_BROWSER_LOADER#${{ secrets.SENTRY_CI_BROWSER_LOADER }}#g" sentry.config.js > sentry.config.temp.js
+        mv sentry.config.temp.js sentry.config.js
+
+    - name: Replace Sentry DSN and Browser Loader (Debian)
+      if: matrix.os == 'ubuntu-latest'
+      working-directory: app
+      run: |
+        sed "s#SENTRY_CI_DSN#${{ secrets.SENTRY_CI_DSN }}#g" sentry.config.js > sentry.config.temp.js
+        mv sentry.config.temp.js sentry.config.js
+        sed "s#SENTRY_CI_BROWSER_LOADER#${{ secrets.SENTRY_CI_BROWSER_LOADER }}#g" sentry.config.js > sentry.config.temp.js
+        mv sentry.config.temp.js sentry.config.js
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Cache Electron binaries
+      id: cache-electron-binaries
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.electron
+          ~/Library/Caches/electron
+          ~/AppData/Local/electron/Cache/
+        key: ${{ runner.os }}-electron-binaries-${{ hashFiles('app/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-electron-binaries-
+
+    - name: Cache Node.js modules
+      id: cache-node-modules
+      uses: actions/cache@v2
+      with:
+        path: app/node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('app/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Playwright Skip Browser Download
+      run: echo "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1" >> $GITHUB_ENV
+
+    - name: python3 fix
+      if: matrix.os == 'macos-latest'
+      run: python3 -m pip install setuptools --break-system-packages
+
+    - name: Install dependencies
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm ci
+      working-directory: app
+
+    - name: Run ESLint
+      run: npm run lint
+      working-directory: app
+
+    - name: Build
+      run: npm run ${{ matrix.build_command }}
+      working-directory: app
+      
+    - name: Run E2E tests on Ubuntu
+      if: matrix.os == 'ubuntu-latest'
+      run: xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- npm run test
+      env:
+        GITHUB_RATELIMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: app
+      
+    - name: Run E2E tests
+      if: matrix.os != 'ubuntu-latest'
+      run: npm run test
+      env:
+        GITHUB_RATELIMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: app
+      
+    - name: List contents of the release directory (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        dir "release"
+
+    - name: List contents of the release directory (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        ls -la release
+
+    - name: List contents of the release directory (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        ls -la release
+
+    - name: Upload artifacts (Windows)
+      uses: actions/upload-artifact@v4
+      if: matrix.os == 'windows-latest'
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: |
+          release/FreeSO Launcher Setup.exe
+
+    - name: Upload artifacts (macOS)
+      uses: actions/upload-artifact@v4
+      if: matrix.os == 'macos-latest'
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: |
+          release/FreeSO Launcher.dmg
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      if: matrix.os == 'ubuntu-latest'
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: |
+          release/FreeSO Launcher.deb
+
+  create-release:
+    needs: [build-launcher, build-extras]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Get version
+      uses: nyaa8/package-version@v1
+      with:
+        path: 'app/package.json'
+        follow-symlinks: 'false'
+
+    - name: Calculate release type counter
+      id: release_type_counter
+      run: |
+        git fetch --prune --unshallow --tags
+        branch_name="${GITHUB_REF#refs/heads/}"
+        sanitized_branch_name="${branch_name//[^a-zA-Z0-9]/-}"
+        if [ "$branch_name" == "main" ]; then
+          release_type="prod"
+        elif [ "$branch_name" == "develop" ]; then
+          release_type="alpha"
+        else
+          release_type=$sanitized_branch_name
+        fi
+        echo "RELEASE_TYPE=$release_type" >> $GITHUB_ENV
+
+        tags_with_counter=$(git tag --list | grep -E "^${{ env.PACKAGE_VERSION }}-${release_type}\.[0-9]+$" || true)
+        max_counter=0
+        for tag in $tags_with_counter; do
+          current_counter=$(echo $tag | sed -E "s/^${{ env.PACKAGE_VERSION }}-${release_type}\.([0-9]+)$/\1/")
+          if [[ $current_counter -gt $max_counter ]]; then
+            max_counter=$current_counter
+          fi
+        done
+
+        counter=$((max_counter + 1))
+        echo "COUNTER=$counter" >> $GITHUB_ENV
+        full_version_name="${{ env.PACKAGE_VERSION }}-$release_type.$counter"
+        echo "FULL_VERSION_NAME=$full_version_name" >> $GITHUB_ENV
+
+    - name: Get latest release tag
+      id: latest_release_tag
+      run: |
+        release_type="${{ env.RELEASE_TYPE }}"
+        latest_release_tag=$(git tag --sort=committerdate | grep -E "${release_type}\.[0-9]+$" | tail -1 || true)
+        if [ -z "$latest_release_tag" ]; then
+          echo "No previous tag found for release type $release_type"
+        else
+          echo "LATEST_RELEASE_TAG=$latest_release_tag" >> $GITHUB_ENV
+        fi
+
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        if [ "${{ env.RELEASE_TYPE }}" == "prod" ]; then
+          release_notes="This is a stable release suitable for reliable end-user experience and optimized for production use."
+        else
+          release_notes="This is a pre-release version meant for development and testing."          
+        fi
+    
+        commit_count=$(git rev-list --count ${{ env.LATEST_RELEASE_TAG }}..HEAD)
+        if [ "$commit_count" != "0" ]; then
+          if [ "$commit_count" == "1" ]; then
+            changes_word="change"
+            verb="has"
+          else
+            changes_word="changes"
+            verb="have"
+          fi
+          release_notes=$(printf "%s\n\nThere %s been %s %s since the last release. See the [list of changes](https://github.com/${{ github.repository }}/compare/${{ env.LATEST_RELEASE_TAG }}...${{ env.FULL_VERSION_NAME }})." "$release_notes" "$verb" "$commit_count" "$changes_word")
+        fi
+    
+        echo "$release_notes" > release_notes.txt
+
+    - name: Create release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ env.FULL_VERSION_NAME }}
+        name: Release ${{ env.FULL_VERSION_NAME }}
+        body_path: release_notes.txt
+        draft: false
+        prerelease: ${{ github.ref != 'refs/heads/main' }}
+
+    - name: Download artifacts (Windows)
+      uses: actions/download-artifact@v4
+      with:
+        name: fsolauncher-win32
+        path: release
+
+    - name: Download artifacts (macOS)
+      uses: actions/download-artifact@v4
+      with:
+        name: fsolauncher-darwin
+        path: release
+
+    - name: Download artifacts (Debian)
+      uses: actions/download-artifact@v4
+      with:
+        name: fsolauncher-debian
+        path: release
+
+    - name: Download launcher extras
+      uses: actions/download-artifact@v4
+      with:
+        name: fsolauncher-extras
+        path: release
+
+    - name: Remove junk from release folder
+      run: |
+        rm -f release/*.iss release/README.md
+
+    - name: Rename files to final artifact names
+      run: |
+        version=${{ env.FULL_VERSION_NAME }}
+        mv release/FreeSO\ Launcher\ Setup.exe release/fsolauncher-$version.exe
+        mv release/FreeSO\ Launcher.dmg release/fsolauncher-$version.dmg
+        mv release/FreeSO\ Launcher.deb release/fsolauncher-$version.deb
+
+    - name: Find Remeshes File
+      id: find_remeshes_file
+      run: |
+        remeshes_file=$(ls release/remeshes-*.zip)
+        echo "REMESHES_FILE=$remeshes_file" >> $GITHUB_ENV
+        echo "Found remeshes file: $remeshes_file"
+
+    - name: Find Proxy File
+      id: find_proxy_file
+      run: |
+        proxy_file=$(ls release/proxy-*)
+        echo "PROXY_FILE=$proxy_file" >> $GITHUB_ENV
+        echo "Found proxy file: $proxy_file"
+
+    - name: Conglomerate SHA256 Hashes
+      run: |
+        echo "Calculating SHA256 for all files in release directory..."
+        cd release
+        > SHASUMS256.txt
+        for file in *; do
+          # Skip SHASUMS256.txt and any other specific files you wish to exclude
+          if [[ "$file" == "SHASUMS256.txt" ]]; then
+            continue
+          fi
+          if [ -f "$file" ]; then  # Ensure it's a file
+            shasum -a 256 "$file" | awk '{print $1, $2}' >> SHASUMS256.txt
+          fi
+        done
+        # Output the contents of SHASUMS256.txt to the console for debugging
+        echo "SHA256 sums of all files:"
+        cat SHASUMS256.txt
+        cd ..
+
+    - name: Upload release assets
+      uses: actions/github-script@v5
+      with:
+        script: |
+          const fs = require( 'fs' );
+          const path = require( 'path' );
+          const directoryPath = 'release';
+          const files = fs.readdirSync( directoryPath );
+          
+          const release = await github.rest.repos.getReleaseByTag( {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            tag: process.env.FULL_VERSION_NAME,
+          } );
+          
+          for ( const file of files ) {
+            const filePath = path.join( directoryPath, file );
+            const content = fs.readFileSync( filePath );
+            await github.rest.repos.uploadReleaseAsset( {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              name: file,
+              data: content,
+              headers: {
+                'content-type': 'application/octet-stream',
+                'content-length': content.length
+              }
+            } );
+          }
+        github-token: ${{ secrets.GITHUB_TOKEN }}

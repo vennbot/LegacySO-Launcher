@@ -1,0 +1,33 @@
+//--------------------------------------------------------------------------------
+  sidebar.pug
+  --------------------------------------------------------------------------------
+  Contains the sidebar UI and page triggers that trigger navigation.
+
+ul#sidebar
+  li#logo
+    div
+  div#simitone-gradient
+  button.launch #{PLAY}
+  #simtime-container(title=INGAME_TIME)
+    i.material-icons access_time
+    #simtime 00:00 AM
+  li.active(page-trigger='home')
+    i.material-icons.left home
+    |  #{HOME}
+  li(page-trigger='installer')
+    i.material-icons.left package_2
+    |  #{INSTALLER}
+  li(page-trigger='downloads')
+    i.material-icons.left get_app
+    |  #{DOWNLOADS}
+  li(page-trigger='settings')
+    i.material-icons.left settings
+    |  #{SETTINGS}
+  li(page-trigger='notifications')
+    i.material-icons.left notifications
+    |  #{NOTIFICATIONS}
+
+  div.bottom
+    li(page-trigger='about')
+      i.material-icons.left help
+      |  #{ABOUT}

@@ -1,0 +1,42 @@
+//--------------------------------------------------------------------------------
+  home.pug
+  --------------------------------------------------------------------------------
+  Contains UI for the Home tab.
+
+#home-page.page(style={'display': 'none'})
+  .hint.arrow-left(hint-page='home' style={'top': '240px', 'left': '30px'})
+    h1 #{TOOLTIP_TITLE_1}
+    small #{TOOLTIP_DESCR_1}
+  h1.jumbotron
+    span #{HOME} 
+      button#refresh-home-button.icon-only(title=REFRESH_HOME_BTN_TITLE)
+        i.material-icons.left refresh
+    small #{HOME_DESCR}
+    div.scenario-stage
+  .page-content(style={'position': 'relative', 'display': 'flex', 'justify-content': 'center'})
+    #home-loading(
+      style={
+        'font-size': '20px', 
+        'margin-top': '20px', 
+        'display': 'block', 
+        'text-align': 'center'
+      }
+    )
+      i.material-icons.spin(style={'margin-bottom': '10px', 'font-size': '1.5em'}) loop
+      br
+      |  #{RETICULATING}
+    #blog
+      .alt-content
+        i.material-icons(style={'font-size': '28px'}) wifi_off
+        br
+        | #{INTERNET_REQ}
+      #blog-root
+      #blog-link 
+        a(href=WEB_URL, target='_blank') View more at legacyso.org
+    #widget(style={'display': 'none'})
+      #now-trending
+        .top 
+          h1 #{TOP_TITLE}
+          span <i>0</i> #{TOP_ONLINE}
+        .content
+          ul
