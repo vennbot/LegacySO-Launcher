@@ -9,3 +9,5 @@ node_modules
 tools/fsolauncher.exe
 tools/resource_hacker/
 /app/test-results
+/.vs
+/.vs/*
