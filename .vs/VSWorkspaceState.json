@@ -2,16 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\fsolauncher-ui",
-    "\\app\\fsolauncher-ui\\includes",
-    "\\app\\fsolauncher-ui\\includes\\pages",
-    "\\app\\fsolauncher\\lib",
-    "\\app\\fsolauncher\\lib\\installers",
-    "\\extras",
-    "\\extras\\fsolauncher-remeshes",
-    "\\release",
-    "\\vendor"
+    "\\app\\fsolauncher\\lib\\installers"
   ],
-  "SelectedNode": "\\app\\fsolauncher-ui\\includes\\pages",
+  "SelectedNode": "\\app\\fsolauncher",
   "PreviewInSolutionExplorer": false
 }

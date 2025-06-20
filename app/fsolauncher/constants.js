@@ -59,17 +59,17 @@ const components = {
 };
 
 const versionChecks = {
-  remeshPackageUrl: 'https://beta.freeso.org/RemeshPackage',
-  updatesUrl: 'https://beta.freeso.org/UpdateCheck',
+  remeshPackageUrl: 'https://lso-meshes.vennbot-lso.workers.dev/?mode=versiontext',
+  updatesUrl: 'https://lso-launcher.vennbot-lso.workers.dev',
   interval: 5 * 60 * 1000 // every 5 minutes
 };
 
 const links = {
-  updateWizardUrl: 'https://beta.freeso.org/update',
-    repoNewIssueUrl: 'https://github.com/vennbot/lsolauncher/issues/new/choose',
-    repoViewIssuesUrl: 'https://github.com/vennbot/lsolauncher/issues',
-    repoDocsUrl: 'https://github.com/vennbot/lsolauncher/wiki',
-    repoUrl: 'https://github.com/vennbot/lsolauncher'
+  updateWizardUrl: 'https://lso-launcher.vennbot-lso.workers.dev',
+  repoNewIssueUrl: 'https://github.com/vennbot/LegacySO-Launcher/issues/new/choose',
+  repoViewIssuesUrl: 'https://github.com/vennbot/LegacySO-Launcher/issues',
+  repoDocsUrl: 'https://github.com/vennbot/LegacySO-Launcher/wiki',
+  repoUrl: 'https://github.com/vennbot/LegacySO-Launcher'
 };
 
 const releases = {

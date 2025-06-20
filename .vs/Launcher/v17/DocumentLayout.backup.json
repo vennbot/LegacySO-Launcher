@@ -3,52 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\constants.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\constants.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\includes\\pages\\installer.pug||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher-ui\\includes\\pages\\installer.pug||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\uitext.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher-ui\\uitext.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\complete.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\installers\\complete.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\extras\\fsolauncher-remeshes\\build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extras\\fsolauncher-remeshes\\build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\remesh-package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher-ui\\remesh-package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\fsolauncher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\fsolauncher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\modal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\modal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\constants.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\constants.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\lso.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\installers\\lso.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\rms.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\installers\\rms.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\fso.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\installers\\fso.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\download.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\lib\\download.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\events.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\fsolauncher\\events.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,162 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "installer.pug",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\includes\\pages\\installer.pug",
-              "RelativeDocumentMoniker": "app\\fsolauncher-ui\\includes\\pages\\installer.pug",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\includes\\pages\\installer.pug",
-              "RelativeToolTip": "app\\fsolauncher-ui\\includes\\pages\\installer.pug",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
-              "WhenOpened": "2025-06-16T21:54:03.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "complete.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\complete.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\installers\\complete.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\complete.js",
-              "RelativeToolTip": "app\\fsolauncher\\lib\\installers\\complete.js",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCkAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:53:01.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "build.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\extras\\fsolauncher-remeshes\\build.js",
-              "RelativeDocumentMoniker": "extras\\fsolauncher-remeshes\\build.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\extras\\fsolauncher-remeshes\\build.js",
-              "RelativeToolTip": "extras\\fsolauncher-remeshes\\build.js",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:51:38.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\main.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\main.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\main.js",
-              "RelativeToolTip": "app\\fsolauncher\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:51:28.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "remesh-package.json",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\remesh-package.json",
-              "RelativeDocumentMoniker": "app\\fsolauncher-ui\\remesh-package.json",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\remesh-package.json",
-              "RelativeToolTip": "app\\fsolauncher-ui\\remesh-package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-16T21:50:33.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "uitext.json",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\uitext.json",
-              "RelativeDocumentMoniker": "app\\fsolauncher-ui\\uitext.json",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher-ui\\uitext.json",
-              "RelativeToolTip": "app\\fsolauncher-ui\\uitext.json",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAswEUAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-16T21:34:19.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "modal.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\modal.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\modal.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\modal.js",
-              "RelativeToolTip": "app\\fsolauncher\\lib\\modal.js",
-              "ViewState": "AgIAADMBAAAAAAAAAAAAAEMBAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:07:53.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "fsolauncher.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\fsolauncher.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\fsolauncher.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\fsolauncher.js",
-              "RelativeToolTip": "app\\fsolauncher\\fsolauncher.js",
-              "ViewState": "AgIAAH0CAAAAAAAAAAAAAIgDAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:06:14.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "fso.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\fso.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\installers\\fso.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\fso.js",
-              "RelativeToolTip": "app\\fsolauncher\\lib\\installers\\fso.js",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAAHYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T21:02:03.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "lso.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\lso.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\installers\\lso.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\lso.js",
-              "RelativeToolTip": "app\\fsolauncher\\lib\\installers\\lso.js",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAAAHcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T20:52:28.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "constants.js",
               "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\constants.js",
               "RelativeDocumentMoniker": "app\\fsolauncher\\constants.js",
               "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\constants.js",
               "RelativeToolTip": "app\\fsolauncher\\constants.js",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAFUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAD0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T20:45:29.284Z",
+              "WhenOpened": "2025-06-19T21:37:33.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "download.js",
-              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\download.js",
-              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\download.js",
-              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\download.js",
-              "RelativeToolTip": "app\\fsolauncher\\lib\\download.js",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "rms.js",
+              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\rms.js",
+              "RelativeDocumentMoniker": "app\\fsolauncher\\lib\\installers\\rms.js",
+              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\lib\\installers\\rms.js",
+              "RelativeToolTip": "app\\fsolauncher\\lib\\installers\\rms.js",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAANQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T20:44:54.167Z",
+              "WhenOpened": "2025-06-19T22:09:40.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fsolauncher.js",
+              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\fsolauncher.js",
+              "RelativeDocumentMoniker": "app\\fsolauncher\\fsolauncher.js",
+              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\fsolauncher.js",
+              "RelativeToolTip": "app\\fsolauncher\\fsolauncher.js",
+              "ViewState": "AgIAALgAAAAAAAAAAAAiwOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-19T21:55:57.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\main.js",
+              "RelativeDocumentMoniker": "app\\main.js",
+              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\main.js",
+              "RelativeToolTip": "app\\main.js",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-19T21:37:05.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "events.js",
+              "DocumentMoniker": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\events.js",
+              "RelativeDocumentMoniker": "app\\fsolauncher\\events.js",
+              "ToolTip": "C:\\Users\\Ben\\SynologyDrive\\shared\\LegacySO\\assembly\\Launcher\\app\\fsolauncher\\events.js",
+              "RelativeToolTip": "app\\fsolauncher\\events.js",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-19T21:36:32.699Z",
               "EditorCaption": ""
             }
           ]
